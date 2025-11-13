@@ -1,74 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Add your name below -->
-  <title>Reagan Scherer</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Reagan’s Space | Physics, Robots, and Chaos</title>
+  <meta name="description" content="Welcome to Reagan's space on the internet — physics, robots, data, and random chaos." />
+
+  <style>
+    :root {
+      --primary: #005577;
+      --accent: #00c4c4;
+      --bg: #ffffff;
+      --bg-dark: #0d1117;
+      --text: #222;
+      --text-light: #fafafa;
+      --radius: 10px;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      transition: background var(--transition), color var(--transition);
+    }
+
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background: linear-gradient(135deg, var(--primary), #007799);
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      background: var(--primary);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      transition: background var(--transition);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .toggle-btn {
+      position: absolute;
+      right: 20px;
+      background: var(--accent);
+      border: none;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      color: white;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition), transform 0.2s;
+    }
+
+    .toggle-btn:hover {
+      background: #00e0e0;
+      transform: rotate(15deg);
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    section h2 {
+      font-size: 2em;
+      border-bottom: 3px solid var(--accent);
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    /* PORTFOLIO */
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      border-radius: var(--radius);
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    body.dark .card {
+      background: #1e1e1e;
+      border-color: #333;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin: 0;
+      color: var(--primary);
+    }
+
+    .card-content p {
+      font-size: 0.95em;
+    }
+
+    /* ABOUT */
+    #about p {
+      font-size: 1.1em;
+      line-height: 1.7;
+    }
+
+    /* CONTACT */
+    #contact a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    #contact a:hover {
+      color: var(--accent);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #eee;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    body.dark footer {
+      background: #161b22;
+      color: #aaa;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      header {
+        padding: 60px 10px;
+      }
+
+      header h1 {
+        font-size: 2em;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .toggle-btn {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+      }
+    }
+  </style>
 </head>
+<body>
+  <header>
+    <h1>👋 Hey, I’m Reagan!</h1>
+    <p>Physics student • Robotics teacher • Space nerd • Professional chaos enthusiast</p>
+  </header>
 
-<body class="main-text-color">
-  <!-- Content container. Everything except footer goes here -->
-  <div class="container">
-    <!-- Image and name container. Put your replacement photo—which you should crop to be square—in the images folder, then change the source attribute to images/yourportraitfilename.jpg. This path says, "Look in the images folder for yourportraitfilename.jpg." Be sure to change the alt text, too. -->
-    <div class="image-container">
-      <img src="Images/IMG_1758.PNG" alt="Photo by Cailey Loomis">
-    </div>
-    <div class="intro">
-      I'm <span class="name"><strong>Reagan Scherer</strong></span>, masters student, and avid concert goer.
-    </div>
-    <div class="section-header">
-      <h1>My work</h1>
-    </div>
-    <!-- Replace the # inside of the href="#" with your links. -->
-    <div class="links-container">
-      <div class="button toggle">Blog post</div>
-      <div class="slidedown">
-        <div class="description">
-          <h2>Millennials, Gen Z, and Gen Alpha: Are we really that different?</h2>
-          <p>In this post, I speak about the differences of generation as technology has defined our childhoods. This post brings great questions about both the similatirties and differences that we struggle in our day to day lives. </p>
-          <a href="https://medium.com/@sreagan_45014/millennials-gen-z-and-gen-alpha-are-we-really-that-different-737016e362f9" class="external-link" target="_blank">Read</a>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <button class="toggle-btn" id="modeToggle" title="Toggle dark mode">🌙</button>
+  </nav>
+
+  <section id="projects">
+    <h2>🚀 Projects</h2>
+    <div class="portfolio">
+      <div class="card">
+        <img src="images/aas_poster_thumbnail.jpg" alt="Poster presentation" />
+        <div class="card-content">
+          <h3>🪐 Galaxy Gas Mapping (AAS Poster)</h3>
+          <p>I studied neutral hydrogen in galaxy groups. It’s as complicated as it sounds, but cooler. <a href="#">[View Poster]</a></p>
         </div>
       </div>
 
-      <div class="button toggle">Video</div>
-      <div class="slidedown">
-        <div class="description">
-          <h2>Week in the life as a VT Physics Senior</h2>
-          <p>It's senior year. I'm busy. Enjoy my insanity.</p>
-          <a href="https://youtu.be/vdjBkIPwqC8?si=BT8Hg8ZHKXdiBsW1" class="external-link" target="_blank">Watch</a>
+      <div class="card">
+        <img src="images/robotics_thumbnail.jpg" alt="Robotics project" />
+        <div class="card-content">
+          <h3>🤖 VEX IQ Robotics Lessons</h3>
+          <p>Created hands-on lessons for 6th graders using robots to explore design, coding, and chaos. <a href="#">[See Lesson]</a></p>
         </div>
       </div>
 
-      <div class="button toggle">AAS 245 Poster</div>
-      <div class="slidedown">
-        <div class="description">
-          <h2>Title: Origin of Intra-Group Neutral Hydrogen in the NGC 5044 Group of Galaxies</h2>
-          <p>Presented in January 2025</p>
-          <a href="https://aas245-aas.ipostersessions.com/?s=43-B0-78-EB-A8-77-16-98-45-F8-42-4C-ED-F0-91-5B" class="external-link" target="_blank">View</a>
+      <div class="card">
+        <img src="images/video_thumbnail.jpg" alt="YouTube video" />
+        <div class="card-content">
+          <h3>🎥 Week in the Life (Physics Student Edition)</h3>
+          <p>A vlog featuring labs, caffeine, and late-night data analysis. <a href="#">[Watch Video]</a></p>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Replace # with PDF from Google Docs, or replace the entire section with whatever you want. Or delete it! Or add another section below it!-->
-    <div class="section-header">
-      <h1>About me!</h1>
-    </div>
+  <section id="teaching">
+    <h2>🧪 Teaching & Outreach</h2>
+    <p>I love making science feel accessible — from robotics to astrophysics.  
+    I’ve taught lessons that mix creativity, physics, and problem-solving (with occasional explosions, of course 🔥).</p>
+  </section>
 
-    <div class="links-container">
-      <a href="https://www.linkedin.com/in/reaganscherer/" class="button" target="_blank">My LinkedIn</a>
-      <a href= "" class="button" target="_blank"> My Teaching Portfolio </a>
-    </div>
+  <section id="about">
+    <h2>🌌 About Me</h2>
+    <p>Hi, I’m Reagan — a physics and astronomy enthusiast currently orbiting around education, data science, and research.  
+    I enjoy coding simulations, streaming, and trying to explain the universe without breaking something.</p>
+    <p><b>Current mission:</b> learning as much as I can, and teaching others.</p>
+  </section>
 
-  </div>
-  <div class="footer">
-    <p>© Reagan Scherer, 2024. Based on a design by <a
-        href="https://www.w3schools.com/howto/howto_website_create_linktree.asp" target="_blank">w3schools</a>.
-    </p>
-  </div>
-  <script type="text/javascript" src="js/slider.js"></script>
+  <section id="contact">
+    <h2>📬 Contact</h2>
+    <p>Email: <a href="mailto:reaganscherer@vt.edu">reaganscherer@vt.edu</a></p>
+    <p>GitHub: <a href="https://github.com/astr0rat" target="_blank">astr0rat</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/reagan-scherer/" target="_blank">linkedin.com/in/reagan-scherer</a></p>
+  </section>
+
+  <footer>
+     Thanks for visiting my tiny corner of the internet! 
+    <br>© 2025 Reagan Scherer
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('modeToggle');
+    const body = document.body;
+    const currentMode = localStorage.getItem('mode');
+
+    if (currentMode === 'dark') {
+      body.classList.add('dark');
+      toggle.textContent = '☀️';
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      toggle.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('mode', isDark ? 'dark' : 'light');
+    });
+  </script>
 </body>
-
 </html>
+
